@@ -88,6 +88,8 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 USE_DEX2OAT_DEBUG := false
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3QuickStep \
+    Settings \
     SystemUI
 
 PRODUCT_SYSTEM_PROPERTIES += \
