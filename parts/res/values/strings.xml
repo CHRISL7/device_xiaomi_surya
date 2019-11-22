@@ -10,4 +10,7 @@
      <string name="haptic_level_summary">The amount of vibration intensity</string>
      <string name="haptic_level_summary_incompatible">Kernel did not support this feature</string>
 
+    <!-- FPS Counter -->
+    <string name="fps_info_title">FPS Counter</string>
+
 </resources>
