@@ -203,6 +203,8 @@ on enable-low-power
     write /dev/cpuset/system-background/cpus 2-5
     write /dev/cpuset/audio-app/cpus 1-2
     write /dev/cpuset/restricted/cpus 2-5
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
+    setprop dalvik.vm.dex2oat-threads 6
 
     # Post-setup services
     setprop vendor.post_boot.parsed 1
