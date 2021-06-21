@@ -1,3 +1,6 @@
+# Haptic
+genfscon sysfs /devices/platform/soc/884000.i2c/i2c-3/3-005a/ulevel                  u:object_r:sysfs_vibrator:s0
+
 # Kernelspace battery saver
 genfscon sysfs /module/battery_saver/parameters/enabled u:object_r:sysfs_battery_saver:s0
 
