@@ -137,6 +137,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.config.avoid_gfx_accel=true \
     debug.renderengine.backend=skiaglthreaded \
     debug.sf.disable_client_composition_cache=1 \
+    debug.sf.layer_caching_active_layer_timeout_ms=1000 \
     persist.sys.sf.native_mode=0 \
     persist.sys.sf.color_mode=0 \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.sm6150.api30 \
