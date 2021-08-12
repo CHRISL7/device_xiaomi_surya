@@ -149,6 +149,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.disable_idle_time_hdr=1 \
     vendor.display.disable_idle_time_video=1 \
     vendor.display.disable_rotator_downscale=1 \
+    vendor.display.disable_metadata_dynamic_fps=1 \
     vendor.display.qdcm.mode_combine=2
 
 # HDR
