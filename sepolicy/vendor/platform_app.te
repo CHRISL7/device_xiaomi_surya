@@ -1,0 +1,3 @@
+# Fps Info
+allow platform_app vendor_sysfs_graphics:dir search;
+allow platform_app vendor_sysfs_graphics:file r_file_perms;
