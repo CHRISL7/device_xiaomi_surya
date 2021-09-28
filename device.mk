@@ -274,10 +274,12 @@ PRODUCT_PACKAGES += \
     AOSPASuryaSystemUI \
     KarnaFrameworks \
     KarnaWifiOverlay \
+    KarnaSettingsProviderOverlay \
     NoCutoutOverlay \
     NotchBarKiller \
     SuryaFrameworks \
     SuryaSettings \
+    SuryaSettingsProviderOverlay
     SuryaSystemUI \
     SuryaWifiOverlay
 
