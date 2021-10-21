@@ -181,3 +181,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Zygote
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
+
+# Recovery
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.binary_xml=false
