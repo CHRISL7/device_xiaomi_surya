@@ -167,14 +167,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.idle_time=0 \
     vendor.display.idle_time_inactive=0
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.use_phase_offsets_as_durations=1 \
     debug.sf.late.sf.duration=10500000 \
-    debug.sf.late.app.duration=16600000 \
+    debug.sf.late.app.duration=20500000 \
     debug.sf.early.sf.duration=16000000 \
     debug.sf.early.app.duration=16500000 \
     debug.sf.earlyGl.sf.duration=13500000 \
-    debug.sf.earlyGl.app.duration=16600000
+    debug.sf.earlyGl.app.duration=21000000
 
 # VSync
 PRODUCT_SYSTEM_PROPERTIES += \
