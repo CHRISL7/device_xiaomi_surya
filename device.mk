@@ -252,6 +252,7 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     NotchBarKiller \
     SuryaFrameworks \
+    SuryaSettings \
     SuryaSystemUI
 
 # ParanoidDoze
