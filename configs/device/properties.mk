@@ -81,7 +81,7 @@ PRODUCT_VENDOR_PROPERTIES += \
    vendor.display.disable_rotator_downscale=1 \
    vendor.display.qdcm.mode_combine=2
 
-PRODUCT_DEFAULT_VENDOR_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
    ro.surface_flinger.has_wide_color_display=false \
    ro.surface_flinger.has_HDR_display=false
 
