@@ -408,7 +408,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # LMK
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.config.low_ram=false
+    ro.config.low_ram=false \
+    ro.lmk.log_stats=false
 
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/surya/surya-vendor.mk)
