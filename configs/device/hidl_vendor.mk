@@ -52,9 +52,3 @@ PRODUCT_PACKAGES += \
 #Secure element
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2.vendor
-
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0.vendor
-
