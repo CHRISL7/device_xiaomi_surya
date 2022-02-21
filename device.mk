@@ -410,7 +410,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.config.low_ram=false \
     ro.lmk.log_stats=false \
-    ro.lmk.filecache_min_kb=153600
+    ro.lmk.filecache_min_kb=153600 \
+    ro.lmk.stall_limit_critical=40
 
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/surya/surya-vendor.mk)
