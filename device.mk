@@ -7,12 +7,9 @@
 # Firmware Surya
 $(call inherit-product, firmware/xiaomi/surya/Android.mk)
 
-# RefreshRate Settings
-$(call inherit-product, $(LOCAL_PATH)/configs/device/refreshrate.mk)
-USE_DYNAMIC_REFRESH_RATE := true
-
 # Device configs makefiles
 $(call inherit-product, $(LOCAL_PATH)/configs/device/hidl_vendor.mk)
+$(call inherit-product, $(LOCAL_PATH)/configs/device/refreshrate.mk)
 
 # ANT+
 PRODUCT_PACKAGES += \
