@@ -1,4 +1,4 @@
-USE_REFRESH_RATE_LIST := true
+USE_REFRESH_RATE_LIST := false
 
 ifeq ($(USE_REFRESH_RATE_LIST), true)
 # Overlays
