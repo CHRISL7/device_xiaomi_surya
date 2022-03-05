@@ -10,6 +10,7 @@ $(call inherit-product, firmware/xiaomi/surya/Android.mk)
 # Device configs makefiles
 $(call inherit-product, $(LOCAL_PATH)/configs/device/hidl_vendor.mk)
 $(call inherit-product, $(LOCAL_PATH)/configs/device/refreshrate.mk)
+$(call inherit-product, $(LOCAL_PATH)/configs/device/properties.mk)
 
 # ANT+
 PRODUCT_PACKAGES += \
