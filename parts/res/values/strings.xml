@@ -13,4 +13,8 @@
     <!-- FPS Counter -->
     <string name="fps_info_title">FPS Counter</string>
 
+    <!-- Dirac -->
+    <string name="dirac_tile_on">On</string>
+    <string name="dirac_tile_off">Off</string>
+
 </resources>
