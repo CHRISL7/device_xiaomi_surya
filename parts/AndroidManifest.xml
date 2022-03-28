@@ -69,7 +69,8 @@
 
         <service
             android:name=".refreshrate.RefreshService"
-            android:permission="RefreshService">
+            android:permission="RefreshService"
+            android:exported="false">
         </service>
 
         <activity
@@ -122,7 +123,8 @@
 
         <service
             android:name=".fpsinfo.FPSInfoService"
-            android:permission="FPSInfoService">
+            android:permission="FPSInfoService"
+            android:exported="false">
         </service>
 
         <service
