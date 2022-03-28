@@ -175,20 +175,15 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPASuryaFrameworks \
-    AOSPASuryaSettings \
-    AOSPASuryaSystemUI \
+    J20CFrameworks \
+    J20CNoCutoutOverlay \
+    J20CSettings \
+    J20CSystemUI \
     KarnaFrameworks \
     KarnaWifiOverlay \
-    KarnaSettingsProviderOverlay \
-    SuryaNoCutoutOverlay \
     NotchBarKiller \
     SuryaFrameworks \
-    SuryaSystemUI \
-    SuryaWifiOverlay \
-    SuryaChargingOverlay \
-    SuryaSettingsLibOverlay \
-    SuryaSettingsProviderOverlay
+    SuryaWifiOverlay
 
 # ParanoidDoze
 PRODUCT_PACKAGES += \
