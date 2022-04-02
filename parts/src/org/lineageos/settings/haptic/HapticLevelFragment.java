@@ -18,7 +18,8 @@ package org.lineageos.settings.haptic;
 
 import android.content.Context;
 import android.os.Bundle;
-
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,8 @@ import org.lineageos.settings.widget.SeekBarPreference;
 
 public class HapticLevelFragment extends PreferenceFragment implements OnPreferenceChangeListener {
 
+    private Vibrator mVibrator;
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.haptic_settings);
@@ -41,6 +44,10 @@ public class HapticLevelFragment extends PreferenceFragment implements OnPrefere
 
         final SeekBarPreference mHapticLevel = (SeekBarPreference) findPreference(HapticUtils.PREF_LEVEL);
         if (FileUtils.fileExists(HapticUtils.PATH_LEVEL)) {
+            mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+            if (mVibrator == null || !mVibrator.hasVibrator()) {
+                mVibrator = null;
+            }
             mHapticLevel.setEnabled(true);
             mHapticLevel.setOnPreferenceChangeListener(this);
         } else {
@@ -61,8 +68,17 @@ public class HapticLevelFragment extends PreferenceFragment implements OnPrefere
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (HapticUtils.PREF_LEVEL.equals(preference.getKey())) {
             HapticUtils.applyLevel(getContext(), (int) newValue, true);
+            doHapticFeedback();
         }
 
         return true;
+    }
+
+    private void doHapticFeedback() {
+        if (mVibrator == null) {
+            return;
+        }
+        mVibrator.vibrate(VibrationEffect.createOneShot(500,
+                VibrationEffect.DEFAULT_AMPLITUDE));
     }
 }
