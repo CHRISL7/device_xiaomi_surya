@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<resources>
-
-    <!-- FPS Counter -->
-    <string name="fps_info_title">FPS Counter</string>
-
-</resources>
