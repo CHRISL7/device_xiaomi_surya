@@ -83,6 +83,10 @@ PRODUCT_DEFAULT_VENDOR_PROPERTIES += \
    ro.surface_flinger.has_wide_color_display=false \
    ro.surface_flinger.has_HDR_display=false
 
+# Disable remote keyguard animation
+PRODUCT_VENDOR_PROPERTIES += \
+   persist.wm.enable_remote_keyguard_animation=0
+
 # Disable vsync for cpu rendered apps
 PRODUCT_SYSTEM_PROPERTIES += \
    debug.cpurend.vsync=false
