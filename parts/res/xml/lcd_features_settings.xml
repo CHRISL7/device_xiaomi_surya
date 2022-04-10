@@ -20,7 +20,8 @@
 
     <SwitchPreference
         android:key="hbm_pref"
-        android:title="@string/lcd_hbm_title" />
+        android:title="@string/lcd_hbm_title"
+        android:summary="@string/lcd_hbm_summary" />
 
     <ListPreference
         android:key="cabc_pref"
