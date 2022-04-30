@@ -123,6 +123,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.disable_backpressure=1 \
     debug.sf.latch_unsignaled=1 \
+    debug.renderengine.backend=skiaglthreaded \
     persist.sys.sf.native_mode=2 \
     persist.sys.sf.color_mode=9 \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
