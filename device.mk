@@ -135,6 +135,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
     ro.config.avoid_gfx_accel=true \
+    debug.renderengine.backend=skiaglthreaded \
     debug.sf.disable_client_composition_cache=1 \
     persist.sys.sf.native_mode=0 \
     persist.sys.sf.color_mode=0 \
