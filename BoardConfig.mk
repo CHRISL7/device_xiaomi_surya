@@ -61,22 +61,27 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_surya
 TARGET_RECOVERY_DEVICE_MODULES := libinit_surya
 
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 2
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_OFFSET := 0x00008000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=0 loop.max_part=7 pcie_ports=compat iptable_raw.raw_before_defrag=1 ip6table_raw.raw_before_defrag=1
-BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
-BOARD_KERNEL_CMDLINE += kpti=off cgroup.memory=nokmem,nosocket
-
 KERNEL_DEFCONFIG := vendor/surya-perf_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
+KERNEL_CUSTOM_LLVM := true
+KERNEL_SD_LLVM_SUPPORT := true
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_MKBOOTIMG_ARGS := --header_version 2
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
+BOARD_KERNEL_CMDLINE += \
+    kpti=off \
+    swiotlb=1 \
+    loop.max_part=7 \
+    androidboot.memcg=1 \
+    msm_rtb.filter=0x237 \
+    service_locator.enable=1 \
+    androidboot.hardware=qcom \
+    lpm_levels.sleep_disabled=1 \
+    cgroup.memory=nokmem,nosocket \
+    androidboot.usbcontroller=a600000.dwc3 \
+    androidboot.init_fatal_reboot_target=recovery
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -117,7 +122,7 @@ TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 150
 TARGET_USERIMAGES_USE_F2FS := true

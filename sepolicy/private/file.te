@@ -1,1 +1,2 @@
+# LCD Features
 type sysfs_lcd_feature, sysfs_type, fs_type;
