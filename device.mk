@@ -92,7 +92,8 @@ USE_DEX2OAT_DEBUG := false
 PRODUCT_SYSTEM_PROPERTIES += \
     pm.dexopt.first-boot=quicken \
     pm.dexopt.bg-dexopt=everything \
-    dalvik.vm.dex2oat64.enabled=true
+    dalvik.vm.dex2oat64.enabled=true \
+    dalvik.vm.systemuicompilerfilter=speed
 
 # Display
 PRODUCT_COPY_FILES += \
