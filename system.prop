@@ -39,3 +39,6 @@ ro.recovery.ui.margin_height=48
 
 # WiFi
 wifi.interface=wlan0
+
+# Disable Skia tracing by default
+debug.hwui.skia_atrace_enabled=false
