@@ -140,10 +140,6 @@ KERNEL_SD_LLVM_SUPPORT := true
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.xiaomi
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml
@@ -151,8 +147,7 @@ PRODUCT_COPY_FILES += \
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    firmware/xiaomi/surya \
-    hardware/xiaomi
+    firmware/xiaomi/surya
 
 # NFC
 PRODUCT_PACKAGES += \

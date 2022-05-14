@@ -86,10 +86,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
    ro.surface_flinger.has_wide_color_display=false \
    ro.surface_flinger.has_HDR_display=false
 
-# Disable remote keyguard animation
-PRODUCT_VENDOR_PROPERTIES += \
-   persist.wm.enable_remote_keyguard_animation=0
-
 # Disable vsync for cpu rendered apps
 PRODUCT_SYSTEM_PROPERTIES += \
    debug.cpurend.vsync=false
@@ -104,6 +100,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 # DRM
 PRODUCT_VENDOR_PROPERTIES += \
     drm.service.enabled=true
+
+# FUSE passthrough
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.fuse.passthrough.enable=true
 
 # FRP
 PRODUCT_VENDOR_PROPERTIES += \
