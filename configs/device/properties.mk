@@ -69,6 +69,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
    debug.sf.latch_unsignaled=1 \
+   debug.sf.disable_client_composition_cache=1 \
    persist.sys.sf.native_mode=0 \
    persist.sys.sf.color_mode=0 \
    ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.sm6150.api30 \
