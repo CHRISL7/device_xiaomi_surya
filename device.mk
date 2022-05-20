@@ -89,6 +89,9 @@ PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 USE_DEX2OAT_DEBUG := false
 
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI
+
 PRODUCT_SYSTEM_PROPERTIES += \
     pm.dexopt.first-boot=quicken \
     pm.dexopt.bg-dexopt=everything \
