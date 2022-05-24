@@ -1,5 +1,2 @@
-# Xiaomi Parts
-allow system_app sysfs_thermal:file rw_file_perms;
-
-# Fps Info
+# FPS Info
 allow system_app vendor_sysfs_graphics:file { getattr open read };
