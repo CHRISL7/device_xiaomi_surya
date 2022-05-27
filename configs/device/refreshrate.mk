@@ -27,7 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # https://docs.google.com/spreadsheets/d/1a_5cVNY3LUAkeg-yL56rYQNwved6Hy-dvEcKSxp6f8k/edit
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.use_phase_offsets_as_durations=1 \
-    debug.sf.frame_rate_multiple_threshold=120 \
+    ro.surface_flinger.frame_rate_multiple_threshold=120 \
     debug.sf.late.sf.duration=10500000 \
     debug.sf.late.app.duration=20500000 \
     debug.sf.early.sf.duration=16000000 \
@@ -55,7 +55,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # https://docs.google.com/spreadsheets/d/1a_5cVNY3LUAkeg-yL56rYQNwved6Hy-dvEcKSxp6f8k/edit
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.use_phase_offsets_as_durations=1 \
-    debug.sf.frame_rate_multiple_threshold=120 \
+    ro.surface_flinger.frame_rate_multiple_threshold=120 \
     debug.sf.late.sf.duration=10500000 \
     debug.sf.late.app.duration=20500000 \
     debug.sf.early.sf.duration=16000000 \
