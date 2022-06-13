@@ -32,6 +32,10 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.config.vc_call_vol_default=5 \
     ro.config.vc_call_vol_steps=10
 
+# ARCore
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.stock.build.fingerprint=POCO/surya_global/surya:11/RKQ1.200826.002/V12.5.8.0.RJGMIXM:user/release-keys
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
