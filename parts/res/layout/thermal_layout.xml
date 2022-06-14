@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 20 The LineageOS Project
+     Copyright (C) 2020 The LineageOS Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -11,22 +11,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<resources>
-     <!-- Gaming Profiles -->
-     <integer name="touch_response_default">3</integer>
-     <integer name="touch_response_max">3</integer>
-
-     <integer name="touch_sensitivity_default">0</integer>
-     <integer name="touch_sensitivity_max">2</integer>
-
-     <integer name="touch_resistant_default">2</integer>
-     <integer name="touch_resistant_max">3</integer>
-
-     <!-- Refresh Rate -->
-     <integer-array name="refresh_rate_tile_blocklist">
-        <item>30</item>
-        <item>48</item>
-        <item>50</item>
-     </integer-array>
-</resources>
+<androidx.recyclerview.widget.RecyclerView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/thermal_rv_view"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:scrollbars="vertical" />     

@@ -166,5 +166,31 @@
                        android:resource="@string/clear_speaker_summary" />
         </activity>
 
+        <activity
+            android:name=".thermal.ThermalActivity"
+            android:exported="true"
+            android:label="@string/thermal_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/thermal_summary" />
+        </activity>
+
+         <activity
+            android:name=".thermal.TouchSettingsActivity"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true" />
+
+        <service
+            android:name=".thermal.ThermalService"
+            android:permission="ThermalService">
+        </service>
+
     </application>
 </manifest>

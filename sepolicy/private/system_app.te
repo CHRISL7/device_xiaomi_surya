@@ -1,2 +1,5 @@
 # LCD Features
 set_prop(system_app, persist_lcd_prop)
+
+# Touch Settings
+allow system_app proc_nvt_feature:file rw_file_perms;
