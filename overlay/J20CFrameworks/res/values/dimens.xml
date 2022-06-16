@@ -17,12 +17,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Height of the status bar -->
-    <dimen name="status_bar_height">91.0px</dimen>
+    <dimen name="status_bar_height">91px</dimen>
 
     <!-- Rounded corners -->
-    <dimen name="rounded_corner_radius">118px</dimen>
-    <dimen name="rounded_corner_radius_top">93.0px</dimen>
-    <dimen name="rounded_corner_radius_bottom">90.0px</dimen>
+    <dimen name="rounded_corner_radius_top">94px</dimen>
+    <dimen name="rounded_corner_radius_bottom">90px</dimen>
     <dimen name="rounded_corner_radius_adjustment">19px</dimen>
 
 </resources>
