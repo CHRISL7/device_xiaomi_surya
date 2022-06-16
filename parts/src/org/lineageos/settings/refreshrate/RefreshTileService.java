@@ -27,7 +27,6 @@ import org.lineageos.settings.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
@@ -56,9 +55,6 @@ public class RefreshTileService extends TileService {
                     m.getPhysicalHeight() == mode.getPhysicalHeight() && !isBlocked) {
                 availableRates.add(rate);
             }
-        }
-        if (!availableRates.isEmpty()) {
-            availableRates.sort(Comparator.naturalOrder());
         }
         syncFromSettings();
     }
