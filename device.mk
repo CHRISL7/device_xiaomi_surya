@@ -265,10 +265,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/input/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
-# IORap
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.device_config.runtime_native_boot.iorap_readahead_enable=true
-
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
