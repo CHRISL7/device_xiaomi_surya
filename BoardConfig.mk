@@ -64,9 +64,8 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_surya
 TARGET_RECOVERY_DEVICE_MODULES := libinit_surya
 
 # Kernel
-KERNEL_DEFCONFIG := vendor/surya-perf_defconfig
+KERNEL_DEFCONFIG := surya_defconfig
 KERNEL_CUSTOM_LLVM := true
-KERNEL_SD_LLVM_SUPPORT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --header_version 2
