@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
-        android:label="@string/device_settings_app_name"
+        android:label="XiaomiParts"
         android:persistent="true">
 
         <receiver android:name=".BootCompletedReceiver"
@@ -113,7 +113,7 @@
 
         <activity
             android:name=".TileEntryActivity"
-            android:label="@string/device_settings_app_name"
+            android:label="XiaomiParts"
             android:exported="true"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
