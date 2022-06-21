@@ -1,0 +1,110 @@
+# Copyright (c) 2013-2018,2020, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+import /vendor/etc/init/init.batterysecret.rc
+
+on fs
+    mkdir /mnt/vendor/persist/audio 0755 system system
+    mkdir /mnt/vendor/persist/haptics 0755 system system
+    mkdir /mnt/vendor/persist/stability 0755 system system
+    mkdir /mnt/vendor/persist/misys 0755 system system
+
+    chmod 0755 /mnt/vendor/persist/camera/rear_dc_cal_wt.bin
+    chown system system /mnt/vendor/persist/camera/rear_dc_cal_wt.bin
+    chmod 0755 /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    chown system system /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    chmod 0755 /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
+    chown system system /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
+
+on post-fs-data
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system
+    mkdir /data/vendor/misc/display 0771 system system
+    chmod 666 /sys/class/drm/card0-DSI-1/disp_count
+
+on boot
+    start mi_thermald
+
+#add for MI-cit white-led
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/max_brightness
+
+#add led For Cit
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/led:flash_1/brightness
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:switch_0/brightness
+    chown system system /sys/class/leds/led:switch_1/brightness
+    chown system system /sys/class/leds/led:switch_2/brightness
+
+    #add flashlight
+    chmod 0660 /sys/class/leds/flashlight/brightness
+    chown system system /sys/class/leds/flashlight/brightness
+
+    #define back flash and front flash
+    chmod 0660 /sys/class/leds/led:flash_0/brightness
+    chmod 0660 /sys/class/leds/led:flash_1/brightness
+    chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chmod 0660 /sys/class/leds/led:torch_1/brightness
+    chmod 0660 /sys/class/leds/led:switch_0/brightness
+    chmod 0660 /sys/class/leds/led:switch_1/brightness
+    chmod 0660 /sys/class/leds/led:switch_2/brightness
+    chmod 0660 /sys/class/leds/flashlight/brightness
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/led:flash_1/brightness
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:switch_0/brightness
+    chown system system /sys/class/leds/led:switch_1/brightness
+    chown system system /sys/class/leds/led:switch_2/brightness
+    chown system system /sys/class/leds/flashlight/brightness
+
+    #enable camera read sensors data
+    setprop persist.camera.gyro.disable 0
+
+on charger
+    start vendor.power_off_alarm
+
+on init
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/class/thermal/thermal_message/sconfig
+    chmod 0666 /sys/class/thermal/thermal_message/temp_state
+    chown system system /sys/class/thermal/thermal_message/temp_state
+
+    # access permissions for fingerprint
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/modalias
+    chmod 0666 /dev/qseecom
+    chmod 0644 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
+service mi_thermald /system/vendor/bin/mi_thermald
+    class core
+    user root
+    group system
