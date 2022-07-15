@@ -152,11 +152,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.disable_metadata_dynamic_fps=1 \
     vendor.display.qdcm.mode_combine=2
 
-# HDR
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.surface_flinger.has_wide_color_display=false \
-    ro.surface_flinger.has_HDR_display=false
-
 # Refresh Rate
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_idle_timer_ms=4000 \
