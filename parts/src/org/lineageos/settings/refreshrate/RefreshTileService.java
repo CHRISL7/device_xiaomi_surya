@@ -23,10 +23,7 @@ import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import android.view.Display;
 
-import org.lineageos.settings.R;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -47,12 +44,10 @@ public class RefreshTileService extends TileService {
         context = getApplicationContext();
         Display.Mode mode = context.getDisplay().getMode();
         Display.Mode[] modes = context.getDisplay().getSupportedModes();
-        int[] blocklist = context.getResources().getIntArray(R.array.refresh_rate_tile_blocklist);
         for (Display.Mode m : modes) {
             float rate = Float.valueOf(String.format(Locale.US, "%.02f", m.getRefreshRate()));
-            boolean isBlocked = blocklist != null && Arrays.stream(blocklist).anyMatch(x -> x == rate);
             if (m.getPhysicalWidth() == mode.getPhysicalWidth() &&
-                    m.getPhysicalHeight() == mode.getPhysicalHeight() && !isBlocked) {
+                m.getPhysicalHeight() == mode.getPhysicalHeight()) {
                 availableRates.add(rate);
             }
         }
