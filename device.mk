@@ -174,8 +174,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.early.sf.duration=16000000 \
     debug.sf.early.app.duration=16500000 \
     debug.sf.earlyGl.sf.duration=13500000 \
-    debug.sf.earlyGl.app.duration=16600000 \
-    debug.sf.frame_rate_multiple_threshold=120
+    debug.sf.earlyGl.app.duration=16600000
 
 # VSync
 PRODUCT_SYSTEM_PROPERTIES += \
