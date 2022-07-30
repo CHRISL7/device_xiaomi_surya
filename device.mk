@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Firmware Surya
-$(call inherit-product, firmware/xiaomi/surya/Android.mk)
-
 # ANT+
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
@@ -293,8 +290,7 @@ PRODUCT_COPY_FILES += \
 
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    firmware/xiaomi/surya
+    $(LOCAL_PATH)
 
 # Net
 PRODUCT_PACKAGES += \
