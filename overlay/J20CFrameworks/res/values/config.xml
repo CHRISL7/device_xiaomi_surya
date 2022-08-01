@@ -514,4 +514,7 @@
     <!-- The max scale for the wallpaper when it's zoomed in -->
     <item name="config_wallpaperMaxScale" format="float" type="dimen">1</item>
 
+    <!-- Whether to show WiFi/Hotspot standard -->
+    <bool name="config_show_network_standard">true</bool>
+
 </resources>
