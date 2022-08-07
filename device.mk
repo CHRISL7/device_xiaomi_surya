@@ -44,7 +44,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.1-impl \
-    android.hardware.bluetooth@1.0.vendor \
     com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
@@ -296,10 +295,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# Net
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
-
 # Netflix
 PRODUCT_VENDOR_PROPERTIES += \
     ro.netflix.bsp_rev=Q6150-17263-1
@@ -394,12 +389,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qcomsysd.enabled=1
 
 # Radio
-PRODUCT_PACKAGES += \
-    libwpa_client \
-    android.hardware.radio@1.6.vendor \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor
-
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.atfwd.start=true \
@@ -410,10 +399,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.process_sups_ind=1 \
     persist.vendor.radio.report_codec=1 \
     ro.telephony.default_network=22,20
-
-# Secure Element
-PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.2.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
