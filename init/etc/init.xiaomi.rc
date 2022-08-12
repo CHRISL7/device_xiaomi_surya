@@ -28,6 +28,7 @@
 #
 
 import /vendor/etc/init/init.batterysecret.rc
+import /vendor/etc/init/vendor.xiaomi.hardware.micharge@1.0-service.rc
 
 on fs
     mkdir /mnt/vendor/persist/audio 0755 system system
@@ -45,8 +46,6 @@ on fs
 on post-fs-data
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
-    mkdir /data/vendor/misc/display 0771 system system
-    chmod 666 /sys/class/drm/card0-DSI-1/disp_count
 
 on boot
     start mi_thermald
@@ -85,9 +84,6 @@ on boot
     chown system system /sys/class/leds/led:switch_1/brightness
     chown system system /sys/class/leds/led:switch_2/brightness
     chown system system /sys/class/leds/flashlight/brightness
-
-    #enable camera read sensors data
-    setprop persist.camera.gyro.disable 0
 
 on charger
     start vendor.power_off_alarm
