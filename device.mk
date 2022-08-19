@@ -54,6 +54,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    libpiex_shim \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     vendor.qti.hardware.camera.device@1.0.vendor
