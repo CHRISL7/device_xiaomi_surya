@@ -522,4 +522,7 @@
     players. -->
     <integer name="config_safe_media_volume_index">17</integer>
 
+    <!-- Determines whether the shell features all run on another thread. -->
+    <bool name="config_enableShellMainThread">true</bool>
+
 </resources>
