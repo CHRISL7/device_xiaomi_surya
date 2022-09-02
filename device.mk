@@ -72,8 +72,8 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
 
 # Charger
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.charger.enable_suspend=true
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.charger.enable_suspend=1
 
 # ContextHub
 PRODUCT_PACKAGES += \
