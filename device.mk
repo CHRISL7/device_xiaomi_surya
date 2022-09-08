@@ -30,6 +30,10 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.config.vc_call_vol_steps=10
 
 # Bluetooth
+PRODUCT_PACKAGES += \
+    libldacBT_enc \
+    libldacBT_abr
+
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.bluetooth.modem_nv_support=true \
     persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
