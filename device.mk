@@ -444,7 +444,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.process_sups_ind=1 \
     persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.report_codec=1
-    
+
+# RCS
+PRODUCT_PACKAGES += \
+    PresencePolling \
+    RcsService
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.xiaomi-multihal \
