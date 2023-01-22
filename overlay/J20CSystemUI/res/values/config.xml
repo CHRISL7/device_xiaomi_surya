@@ -13,4 +13,7 @@
          available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
 
+    <!-- StatusBar burn-in protection -->
+    <bool name="config_disableStatusBarBurnInProtection">true</bool>
+
 </resources>
