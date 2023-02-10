@@ -1,0 +1,5 @@
+# Data files
+/data/per_boot(/.*)?                                                 u:object_r:per_boot_file:s0
+
+# Sensors
+/vendor/bin/hw/android\.hardware\.sensors@2.1-service\.xiaomi-multihal			                                u:object_r:hal_sensors_default_exec:s0
