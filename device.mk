@@ -60,6 +60,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.btstack.enable.twsplus=true
 
 # Camera
+$(call inherit-product, device/xiaomi/surya-miuicamera/config.mk)
+
 PRODUCT_PACKAGES += \
     libpiex_shim \
     android.hardware.camera.provider@2.4-impl \
