@@ -18,6 +18,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths_wcd9375.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_wcd9375.xml
 
 PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.audio.soundfx.type=mi \
+    ro.vendor.audio.soundfx.usb=true \
+    ro.vendor.audio.misound.bluetooth.enable=true \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
     persist.vendor.audio.voicecall.speaker.stereo=true
 
@@ -51,9 +54,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
 
 # Charger
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.charger.enable_suspend=true
-
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.cp.fcc_main_ua=400000 \
     persist.vendor.cp.taper_term_mv=6500 \
@@ -314,10 +314,13 @@ TARGET_COMMON_QTI_COMPONENTS := \
     audio \
     av \
     bt \
+    charging \
     display \
+    dsprpcd \
     gps \
     init \
-    media-legacy \
+    keymaster \
+    media \
     overlay \
     perf \
     telephony \
@@ -367,6 +370,10 @@ PRODUCT_PACKAGES += \
 
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/surya/surya-vendor.mk)
+
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlbase-v32.so
 
 # WiFi
 PRODUCT_COPY_FILES += \
