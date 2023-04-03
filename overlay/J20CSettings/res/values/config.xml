@@ -8,16 +8,6 @@
     <!-- Whether to show min/max refresh rate in display settings -->
     <bool name="config_show_refresh_rate_controls">true</bool>
 
-    <!-- Whether to show Smooth Display feature in Settings Options -->
-    <bool name="config_show_smooth_display">true</bool>
-
-    <!-- Awaken maintainer -->
-    <string name="awaken_maintainer">KUI</string>
-
-    <!-- Battery health -->
-    <string name="config_batteryRemainingCapacityNode">/sys/class/power_supply/bms/charge_full</string>
-    <string name="config_batteryDesignCapacityNode">/sys/class/power_supply/bms/charge_full_design</string>
-
     <!-- The number of vibration intensity levels supported by the device.
          Note that this should correspond to the ability to vary the vibration amplitude, with
          enough dynamic range to have at least as many distinct intensity levels as defined here.
