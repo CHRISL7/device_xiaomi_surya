@@ -1,0 +1,108 @@
+# Audio
+persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
+persist.vendor.audio.voicecall.speaker.stereo=true
+
+# Bluetooth
+persist.vendor.bluetooth.modem_nv_support=true
+persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false
+persist.vendor.qcom.bluetooth.enable.splita2dp=true
+persist.vendor.qcom.bluetooth.scram.enabled=true
+persist.vendor.qcom.bluetooth.soc=cherokee
+persist.vendor.qcom.bluetooth.twsp_state.enabled=false
+ro.vendor.audio.misound.bluetooth.enable=true
+ro.vendor.bluetooth.wipower=false
+vendor.qcom.bluetooth.soc=cherokee
+
+# Camera
+camera.disable_zsl_mode=1
+
+# Crypto
+ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Display
+debug.sf.disable_backpressure=1
+debug.sf.disable_client_composition_cache=1
+debug.sf.frame_rate_multiple_threshold=60
+debug.sf.latch_unsignaled=1
+debug.sf.layer_caching_active_layer_timeout_ms=1000
+debug.hwui.skia_atrace_enabled=false
+debug.renderengine.backend=skiaglthreaded
+ro.hwui.render_ahead=20
+ro.surface_flinger.protected_contents=true
+ro.surface_flinger.set_display_power_timer_ms=1000
+ro.surface_flinger.set_idle_timer_ms=500
+ro.surface_flinger.set_touch_timer_ms=750
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
+persist.sys.sf.native_mode=2
+persist.sys.sf.color_mode=9
+ro.vendor.display.ad=1
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
+ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
+ro.vendor.display.sensortype=2
+vendor.display.qdcm.mode_combine=2
+vendor.display.disable_idle_time_hdr=1
+vendor.display.disable_idle_time_video=1
+vendor.display.disable_rotator_downscale=1
+vendor.display.idle_time=0
+vendor.display.idle_time_inactive=0
+
+# Display (phase offsets)
+debug.sf.use_phase_offsets_as_durations=1
+debug.sf.late.sf.duration=15666666
+debug.sf.late.app.duration=16666666
+debug.sf.early.sf.duration=15666666
+debug.sf.early.app.duration=16666666
+debug.sf.earlyGl.sf.duration=15666666
+debug.sf.earlyGl.app.duration=16666666
+
+# DPM
+persist.vendor.dpmhalservice.enable=1
+
+# DRM
+drm.service.enabled=true
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# GFX
+ro.config.avoid_gfx_accel=true
+
+# HVDCP
+persist.vendor.cp.fcc_main_ua=400000
+persist.vendor.cp.taper_term_mv=6500
+persist.vendor.cp.vbus_offset_mv=1040
+
+# Incremental FS
+ro.incremental.enable=1
+
+# IWLAN
+persist.vendor.data.iwlan.enable=true
+ro.telephony.iwlan_operation_mode=legacy
+
+# Keystore
+ro.hardware.keystore_desede=true
+
+# Radio
+persist.vendor.radio.add_power_save=1
+persist.vendor.radio.atfwd.start=true
+persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.force_on_dc=true
+persist.vendor.radio.manual_nw_rej_ct=1
+persist.vendor.radio.mt_sms_ack=30
+persist.vendor.radio.process_sups_ind=1
+persist.vendor.radio.report_codec=1
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+
+# SoC
+ro.soc.model=SM7150
+
+# Thermal
+vendor.sys.thermal.data.path=/data/vendor/thermal/
+
+# ZRAM
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=1440
+ro.zram.periodic_wb_delay_hours=24

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- The padding around the statusbar -->
+    <dimen name="status_bar_padding_top">8dp</dimen>
+    <dimen name="status_bar_padding_start">4dp</dimen>
+    <dimen name="status_bar_padding_end">3dp</dimen>
+    <dimen name="status_bar_header_height_keyguard">@*android:dimen/status_bar_height_default</dimen>
+
+    <!-- Location of the power button/fingerprint sensor -->
+    <dimen name="physical_power_button_center_screen_location_y">1030px</dimen>
+    <dimen name="physical_fingerprint_sensor_center_screen_location_y">1030px</dimen>
+    <dimen name="physical_fingerprint_sensor_center_screen_location_x">1080px</dimen>
+
+    <!-- The width of user avatar when on Keyguard -->
+    <dimen name="multi_user_avatar_keyguard_size">12dp</dimen>
+
+</resources>

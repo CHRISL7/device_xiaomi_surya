@@ -27,6 +27,7 @@ namespace power {
 namespace impl {
 
 using ::aidl::android::hardware::power::Mode;
+using ::android::base::WriteStringToFile;
 
 bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return) {
     switch (type) {
@@ -41,7 +42,7 @@ bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return) {
 bool setDeviceSpecificMode(Mode type, bool enabled) {
     switch (type) {
         case Mode::LOW_POWER:
-            ::android::base::WriteStringToFile(enabled ? "Y" : "N", BATTERY_SAVER_NODE, true);
+            WriteStringToFile(enabled ? "Y" : "N", BATTERY_SAVER_NODE, true);
             return true;
         default:
             return false;

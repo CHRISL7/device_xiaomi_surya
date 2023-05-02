@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Height of the status bar -->
+    <dimen name="status_bar_height_default">91px</dimen>
+    <dimen name="status_bar_height_portrait">@*android:dimen/status_bar_height_default</dimen>
+
+    <!-- Rounded corners -->
+    <dimen name="rounded_corner_radius_top">94px</dimen>
+    <dimen name="rounded_corner_radius_bottom">90px</dimen>
+    <dimen name="rounded_corner_content_padding">16dp</dimen>
+
+</resources>

@@ -1,0 +1,14 @@
+# Dexopt
+pm.dexopt.first-boot=quicken
+pm.dexopt.bg-dexopt=everything
+
+# Display
+ro.sf.use_latest_hwc_vsync_period=0
+
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
+
+# Netflix
+ro.netflix.bsp_rev=Q6150-17263-1
+ro.netflix.channel=497730f0-ad4b-11e7-95a4-c7ad113ce187
+ro.netflix.signup=1
