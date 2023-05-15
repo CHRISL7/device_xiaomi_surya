@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+TARGET_SEPOLICY_DIR := msmsteppe
+
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/surya/surya-vendor.mk)
 
@@ -313,8 +315,9 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPASuryaFrameworksOverlay \
-    AOSPASuryaSystemUIOverlay \
+    AOSPSuryaFrameworksOverlay \
+    AOSPSuryaSettings \
+    AOSPSuryaSystemUIOverlay \
     KarnaFrameworksOverlay \
     NotchBarKillerOverlay \
     SuryaCarrierConfigOverlay \
@@ -336,8 +339,12 @@ PRODUCT_COPY_FILES += \
 # Platform
 MSMSTEPPE := sm6150
 TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
+TARGET_SEPOLICY_DIR := msmsteppe
 
 # QTI
+$(call inherit-product, device/qcom/common/common.mk)
+TARGET_USE_SM8150_HALS := true
+
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     alarm \
