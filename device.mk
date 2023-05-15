@@ -313,8 +313,9 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPASuryaFrameworksOverlay \
-    AOSPASuryaSystemUIOverlay \
+    AOSPSuryaFrameworksOverlay \
+    AOSPSuryaSettings \
+    AOSPSuryaSystemUIOverlay \
     KarnaFrameworksOverlay \
     NotchBarKillerOverlay \
     SuryaCarrierConfigOverlay \
@@ -338,6 +339,9 @@ MSMSTEPPE := sm6150
 TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
 # QTI
+$(call inherit-product, device/qcom/common/common.mk)
+TARGET_USE_SM8150_HALS := true
+
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     alarm \
