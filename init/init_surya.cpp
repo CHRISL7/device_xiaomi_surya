@@ -63,8 +63,8 @@ void set_ro_build_prop(const string &source, const string &prop,
     property_override(prop_name.c_str(), value.c_str());
 }
 
-void set_device_props(const string brand, const string device, const string model,
-        const string name, const string manufacturer, const string mod_device) {
+void set_device_props(const string device, const string model,
+        const string name, const string mod_device) {
     // list of partitions to override props
     string source_partitions[] = {"", "bootimage.", "odm.", "product.",
                                   "system.", "system_ext.", "vendor."};
