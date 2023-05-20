@@ -34,7 +34,6 @@
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
-#include <sys/sysinfo.h>
 #include <android-base/properties.h>
 
 #include "property_service.h"
@@ -43,14 +42,13 @@
 using android::base::GetProperty;
 using std::string;
 
-void property_override(string prop, string value)
-{
-    auto pi = (prop_info*) __system_property_find(prop.c_str());
+void property_override(char const prop[], char const value[]) {
+    auto pi = (prop_info *)__system_property_find(prop);
 
     if (pi != nullptr)
-        __system_property_update(pi, value.c_str(), value.size());
+        __system_property_update(pi, value, strlen(value));
     else
-        __system_property_add(prop.c_str(), prop.size(), value.c_str(), value.size());
+        __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
 void set_ro_build_prop(const string &source, const string &prop,
@@ -65,20 +63,18 @@ void set_ro_build_prop(const string &source, const string &prop,
     property_override(prop_name.c_str(), value.c_str());
 }
 
-void set_device_props(const string model, const string name, const string marketname,
-                      const string mod_device) {
+void set_device_props(const string brand, const string device, const string model,
+        const string name, const string manufacturer, const string mod_device) {
     // list of partitions to override props
-    string source_partitions[] = { "", "bootimage.", "odm.", "product.",
-                                   "system.", "system_ext.", "vendor." };
+    string source_partitions[] = {"", "bootimage.", "odm.", "product.",
+                                  "system.", "system_ext.", "vendor."};
 
     for (const string &source : source_partitions) {
+    	set_ro_build_prop(source, "device", device, true);
         set_ro_build_prop(source, "model", model, true);
         set_ro_build_prop(source, "name", name, true);
-        set_ro_build_prop(source, "marketname", marketname, true);
     }
     property_override("ro.product.mod_device", mod_device.c_str());
-    property_override("bluetooth.device.default_name", marketname.c_str());
-    property_override("vendor.usb.product_string", marketname.c_str());
 }
 
 void vendor_load_properties()
@@ -86,13 +82,9 @@ void vendor_load_properties()
     // Detect device and configure properties
 
     if (GetProperty("ro.boot.hwname", "") == "karna") { // POCO X3 (India)
-        set_device_props("M2007J20CI", "karna_in", "POCO X3", "surya_in_global");
+        set_device_props("karna", "POCO X3","karna_in", "surya_in_global");
     } else { // POCO X3 NFC
-        string region = GetProperty("ro.boot.hwc", "");
-        if (region == "THAI" || region == "THAI_PA") // POCO X3 NFC Thailand
-            set_device_props("M2007J20CT", "surya_global", "POCO X3 NFC", "surya_global");
-        else // POCO X3 NFC Global
-            set_device_props("M2007J20CG", "surya_global", "POCO X3 NFC", "surya_global");
+        set_device_props("surya", "POCO X3 NFC", "surya_global", "surya_global");
     }
 
     // Set hardware revision
