@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2023  Pixel Experience
+# Copyright (C) 2022 Pixel Experience
 #
 # SPDX-License-Identifier: Apache-2.0
 #

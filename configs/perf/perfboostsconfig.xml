@@ -16,7 +16,8 @@
     <PerfBoost>
 
     <!--app lauch boost-->
-        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- SCHED DOWNMIGRATE resource opcode, value-->
+        <!-- SCHED UPMIGRATE resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
@@ -26,11 +27,11 @@
         <!-- Type="1", main launch boost of 2sec -->
         <Config
             Id="0x00001081" Type="1" Enable="true" Timeout="2000" Target="msmsteppe"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
+            Resources="0x40C20000, 0x28, 0x40C1C000, 0x32, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
                        0x40800100, 0xFFF, 0x4280C000, 596" />
        <Config
            Id="0x00001081" Type="1" Enable="true" Timeout="2000" Target="sdmmagpie"
-           Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
+           Resources="0x40C20000, 0x28, 0x40C1C000, 0x32, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
                       0x40800100, 0xFFF, 0x4280C000, 800" />
 
     <!--app lauch boost (disabling packing)-->
@@ -242,22 +243,6 @@
             Resources="0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
                        0x40800100, 0xFFF, 0x40CA0000, 0, 0x40C00000, 2" />
 
-    <!--resume boost-->
-       <!-- SCHEDBOOST resource opcode, value-->
-       <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
-       <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
-       <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
-       <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
-
-       <Config
-            Id="0x00001082" Type="1" Enable="true" Timeout="400" Target="msmsteppe"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
-                       0x40800100, 0xFFF" />
-       <Config
-            Id="0x00001082" Type="1" Enable="true" Timeout="400" Target="sdmmagpie"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
-                      0x40800100, 0xFFF" />
-
     <!--Rotation latency boost-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
@@ -344,6 +329,36 @@
                        0x40C00000, 0x3,
                        0x40C58000, 95,
                        0x40C54000, 100" />
+
+    <!--XiaoMi bluetooth boost-->
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+        <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+        <!-- CPUBOOST_MAX_FREQ PRIME Core resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ PRIME Core resource opcode, value-->
+        <!-- CPUBW_MAX_FREQ resource opcode, value-->
+        <!-- CPUBW_MIN_FREQ resource opcode, value-->
+        <!-- POWER COLLAPSE resource opcode, value-->
+        <!-- STORAGE CLK SCALING resource opcode, value-->
+        <!-- LLCC DDR LAT CPU0 MIN FREQ resource opcode, value-->
+        <!-- L3 resource opcode, value-->
+        <!-- GPU DISABLE resource opcode, value-->
+
+        <!-- Type="1", bluetooth boost of 3sec-->
+        <Config
+              Id="0x000011C0" Type="1" Enable="true" Timeout="3000" Target="msmsteppe"
+              Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40804200, 0xFFF,
+                         0x40800000, 0xFFF, 0x40800100, 0xFFF, 0x40800200, 0xFFF, 0x41818000, 0xFF,
+                         0x41800000, 0xFF, 0x40400000, 0x1, 0x42C10000, 0x1, 0x43430100, 0x28C5,
+                         0x43400000, 0xFFFF, 0x4281C000, 2000" />
+        <Config
+              Id="0x000011C0" Type="1" Enable="true" Timeout="3000" Target="sdmmagpie"
+              Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40804200, 0xFFF,
+                         0x40800000, 0xFFF, 0x40800100, 0xFFF, 0x40800200, 0xFFF, 0x41818000, 0xFF,
+                         0x41800000, 0xFF, 0x40400000, 0x1, 0x42C10000, 0x1, 0x43430100, 0x28C5,
+                         0x43400000, 0xFFFF, 0x4281C000, 2000" />
 
     </PerfBoost>
 </BoostConfigs>

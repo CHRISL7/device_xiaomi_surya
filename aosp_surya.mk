@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2023 Pixel Experience
+# Copyright (C) 2022 Pixel Experience
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -31,9 +31,6 @@ PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_PRODUCT=surya_global
 
 # Target
 TARGET_BOOT_ANIMATION_RES := 1080

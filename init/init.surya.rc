@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import /vendor/etc/init/hw/init.xiaomiparts.rc
+
 on early-boot
     # SSR Setup
     write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
@@ -24,22 +26,14 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys7/restart_level RELATED
 
 on init
-    chown system system /sys/touchpanel/double_tap
-    chmod 0644 /sys/touchpanel/double_tap
+    chown system system /proc/tp_gesture
+    chmod 0644 /proc/tp_gesture
 
-    chown system system /sys/class/leds/white/brightness
-    chown system system /sys/class/leds/white/breath
-    chown system system /sys/class/leds/white/delay_on
-    chown system system /sys/class/leds/white/delay_off
+    chown system system /sys/module/battery_saver/parameters/enabled
+    chmod 0664 /sys/module/battery_saver/parameters/enabled
 
+    # Change permissions for /dev/diag
     chmod 0666 /dev/diag
-
-on post-fs-data
-    # Bind mount fastrpc_shell_3 for labelling
-    mkdir /mnt/vendor/dsp 0770 root root
-    copy /vendor/dsp/cdsp/fastrpc_shell_3 /mnt/vendor/dsp/fastrpc_shell_3
-    chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
-    mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
 
 on property:ro.boot.hwname=*
     setprop ro.boot.product.hardware.sku ${ro.boot.hwname}

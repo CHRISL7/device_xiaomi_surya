@@ -1,12 +1,3 @@
-on init
-    # access permissions for fingerprint
-    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/irq
-    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/wakeup_enable
-    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/modalias
-    chmod 0666 /dev/qseecom
-    chmod 0644 /dev/goodix_fp
-    chown system system /dev/goodix_fp
-
 on post-fs-data
     # Create fingerprint related directory
     mkdir /data/vendor/fpc 0770 system system
@@ -20,3 +11,12 @@ on boot
     chown system system /sys/bus/platform/devices/soc/soc:fpc1020/irq
     chown system system /sys/bus/platform/devices/soc/soc:fpc1020/hw_reset
     chown system system /sys/bus/platform/devices/soc/soc:fpc1020/wakeup_enable
+
+on init
+    # access permissions for fingerprint
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/irq
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/wakeup_enable
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/modalias
+    chmod 0666 /dev/qseecom
+    chmod 0644 /dev/goodix_fp
+    chown system system /dev/goodix_fp
