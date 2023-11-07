@@ -36,20 +36,26 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        
-        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            return;
-        }
-        if (DEBUG)
-            Log.d(TAG, "Received boot completed intent");
-        try {
-            DiracUtils.getInstance(context);
-        } catch (Exception e) {
-            Log.d(TAG, "Dirac is not present in system");
-        }
-        RefreshUtils.initialize(context);
-        ThermalUtils.startService(context);
+        Log.i(TAG, "Received intent: " + intent.getAction());
 
+        switch (intent.getAction()) {
+            case Intent.ACTION_LOCKED_BOOT_COMPLETED:
+                onLockedBootCompleted(context);
+                break;
+            case Intent.ACTION_BOOT_COMPLETED:
+                onBootCompleted(context);
+                break;
+        }
     }
+
+    private static void onLockedBootCompleted(Context context) {
+        // Services that don't require reading from data.
+    }
+    
+    private static void onBootCompleted(Context context) {
+        // Data is now accessible (user has just unlocked).
+        DiracUtils.getInstance(context);
+        RefreshUtils.initialize(context);
+        ThermalUtils.initialize(context);
+    }        
 }
