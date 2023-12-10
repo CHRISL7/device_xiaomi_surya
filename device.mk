@@ -90,6 +90,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.crypto.volume.filenames_mode=aes-256-cts \
     ro.crypto.volume.options=::v2
 
+# Cutout
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_hide_display_cutout=true
+
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
@@ -302,6 +306,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AOSPASuryaFrameworksOverlay \
     AOSPASuryaSystemUIOverlay \
+    AvoidAppsInCutoutOverlay \
     KarnaFrameworksOverlay \
     NotchBarKillerOverlay \
     SuryaCarrierConfigOverlay \
