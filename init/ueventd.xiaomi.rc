@@ -2,5 +2,8 @@
 /sys/devices/platform/soc/soc:fpc1020* fingerdown_wait 0220 system system
 /dev/goodix_fp            0660   system     system
 
+# Lineage Health
+/sys/class/power_supply/battery/input_suspend  0660   system     system
+
 # wlan
 /dev/spidev0.1            0660   system	    system
